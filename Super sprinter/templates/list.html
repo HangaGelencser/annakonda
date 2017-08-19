@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html></html>
+<head>
+    <title> User Manager </title>
+    <form action="/new_story" method='GET'>
+        <p><input type="submit" value="Add new user story"></p>
+    </form>
+</head>
+<body>
+    <center>
+    <table>
+        <tr>
+            <th>Story ID</th>
+            <th>Story title</th>
+            <th>User story</th>
+            <th>Acceptance criteria</th>
+            <th>Buisness Value</th>
+            <th>Estimation</th>
+            <th>Status</th>
+            <th>Link</th>
+        </tr>
+        <tr>
+            {% for post_id in range(1,long+1) %}
+            <tr>
+                <td> {{lst[post_id-1][0]}}</td>
+                <td> {{lst[post_id-1][1]}}</td>
+                <td> {{lst[post_id-1][2]}}</td>
+                <td> {{lst[post_id-1][3]}}</td>
+                <td> {{lst[post_id-1][4]}}</td>
+                <td> {{lst[post_id-1][5]}}</td>
+                <td> {{lst[post_id-1][6]}}</td>
+                <td><a href="/story/{{post_id}}">asd</a></td>
+            </tr>
+            {%endfor%}
+        </tr>
+    </table>
+    </form>
+</body>
+</html>
