@@ -17,7 +17,8 @@
             <th>Buisness Value</th>
             <th>Estimation</th>
             <th>Status</th>
-            <th>Link</th>
+            <th>Update</th>
+            <th>Delete</th>
         </tr>
         <tr>
             {% for post_id in range(1,long+1) %}
@@ -29,7 +30,8 @@
                 <td> {{lst[post_id-1][4]}}</td>
                 <td> {{lst[post_id-1][5]}}</td>
                 <td> {{lst[post_id-1][6]}}</td>
-                <td><a href="/story/{{post_id}}">asd</a></td>
+                <td><a href="/story/{{ post_id }}">&#10000;</a></td>
+                <td><a href="/delete/{{ post_id }}">&#128465;</a></td>
             </tr>
             {%endfor%}
         </tr>
