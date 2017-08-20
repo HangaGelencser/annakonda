@@ -32,6 +32,12 @@ def obtained_data():
     return actual_list
 
 
+def write_rows(filename):
+    with open("data.csv", "w") as file:
+        datawriter = csv.writer(file)
+        datawriter.writerows(filename)
+
+
 @app.route('/')
 def story():
     list_of_data = read_csv()
@@ -51,9 +57,7 @@ def update_story(post_id):
     for i in range(len(list_of_data)):
         if post_id-1 == i:
             list_of_data[i] = actual_list
-    with open("data.csv", "w") as file:
-        datawriter = csv.writer(file)
-        datawriter.writerows(list_of_data)
+    write_rows(list_of_data)
     return redirect("/")
 
 
@@ -66,9 +70,7 @@ def delete(post_id):
             continue
         else:
             data_info.append(list_of_data[i])
-    with open("data.csv", "w", newline='') as file:
-        datawriter = csv.writer(file)
-        datawriter.writerows(data_info)
+    write_rows(data_info)
     return redirect('/')
 
 

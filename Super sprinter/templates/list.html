@@ -2,23 +2,21 @@
 <html></html>
 <head>
     <title> User Manager </title>
-    <form action="/new_story" method='GET'>
-        <p><input type="submit" value="Add new user story"></p>
-    </form>
 </head>
 <body>
     <center>
-    <table>
+    <p><h2>User Manager</h2></p>
+    <table  border="6">
         <tr>
-            <th>Story ID</th>
-            <th>Story title</th>
-            <th>User story</th>
-            <th>Acceptance criteria</th>
-            <th>Buisness Value</th>
-            <th>Estimation</th>
-            <th>Status</th>
-            <th>Update</th>
-            <th>Delete</th>
+            <th><h5>Story ID</h5></th>
+            <th><h5>Story title</h5></th>
+            <th><h5>User story</h5></th>
+            <th><h5>Acceptance criteria</h5></th>
+            <th><h5>Buisness Value</h5></th>
+            <th><h5>Estimation</h5></th>
+            <th><h5>Status</h5></th>
+            <th><h5>Update</h5></th>
+            <th><h5>Delete</h5></th>
         </tr>
         <tr>
             {% for post_id in range(1,long+1) %}
@@ -36,6 +34,9 @@
             {%endfor%}
         </tr>
     </table>
+    </form>
+    <form action="/new_story" method='GET'>
+        <p><center><input type="submit" value="Add new User Story"></p>
     </form>
 </body>
 </html>
