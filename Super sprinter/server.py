@@ -11,12 +11,12 @@ def id_generator(chars=string.ascii_uppercase + string.ascii_lowercase + string.
 
 
 def read_csv():
-    lst = []
+    list_for_csv = []
     with open("data.csv", "r", newline='') as file:
         reader = csv.reader(file, delimiter=",")
         for row in reader:
-            lst.append(row)
-    return lst
+            list_for_csv.append(row)
+    return list_for_csv
 
 
 def obtained_data():
@@ -47,7 +47,7 @@ def story():
 
 @app.route('/new_story')
 def new_story():
-    return render_template('story_id.html')
+    return render_template('form.html')
 
 
 @app.route('/update/<int:post_id>')
@@ -86,7 +86,7 @@ def saving():
 @app.route('/story/<int:post_id>')
 def story_1(post_id):
     list_of_data = read_csv()
-    return render_template('story_id.html', post_id=post_id, lst=list_of_data[post_id-1])
+    return render_template('form.html', post_id=post_id, lst=list_of_data[post_id-1])
 
 
 if __name__ == "__main__":
