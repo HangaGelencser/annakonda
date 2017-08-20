@@ -47,7 +47,7 @@ def story():
 
 @app.route('/new_story')
 def new_story():
-    return render_template('story.html')
+    return render_template('story_id.html')
 
 
 @app.route('/update/<int:post_id>')
